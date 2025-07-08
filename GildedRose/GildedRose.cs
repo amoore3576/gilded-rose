@@ -1,5 +1,4 @@
 ﻿using GildedRoseKata.Behaviour;
-using Microsoft.VisualBasic;
 
 namespace GildedRoseKata;
 

@@ -4,6 +4,18 @@ public class StandardBehaviour : IBehavior
 {
     public void UpdateQuality(Item item)
     {
-        throw new NotImplementedException();
+        item.SellIn -= 1;
+
+        if (item.Quality > 0)
+        {
+            if (item.SellIn < 0)
+            {
+                item.Quality -= 2;
+            }
+            else
+            {
+                item.Quality -= 1;
+            }           
+        }
     }
 }
