@@ -2,7 +2,7 @@ namespace GildedRoseKata.Behaviour;
 
 public class ItemBehaviourProvider
 {
-    IBehavior GetBehaviour(Item item)
+    public IBehavior GetBehaviour(Item item)
     {
         switch (item.Name)
         {

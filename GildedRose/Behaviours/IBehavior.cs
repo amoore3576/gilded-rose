@@ -2,5 +2,5 @@ namespace GildedRoseKata.Behaviour;
 
 public interface IBehavior
 {
-    void UpdateQuality();
+    void UpdateQuality(Item item);
 }

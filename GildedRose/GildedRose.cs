@@ -1,17 +1,27 @@
-﻿namespace GildedRoseKata;
+﻿using GildedRoseKata.Behaviour;
+
+namespace GildedRoseKata;
 
 public class GildedRose
 {
     IList<Item> Items;
+    ItemBehaviourProvider itemBehaviourProvider;
     public GildedRose(IList<Item> Items)
     {
         this.Items = Items;
+        itemBehaviourProvider = new ItemBehaviourProvider();
     }
 
     public void UpdateQuality()
     {
         for (var i = 0; i < Items.Count; i++)
         {
+            if (Items[i].Name == ItemNames.DexterityVest || Items[i].Name == ItemNames.ElixirOfTheMongoose)
+            {
+                var behaviour = itemBehaviourProvider.GetBehaviour(Items[i]);
+                //behaviour.UpdateQuality();
+                break;
+            }
             if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
             {
                 if (Items[i].Quality > 0)
