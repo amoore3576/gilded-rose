@@ -12,8 +12,8 @@ public class ItemBehaviourProvider
                 return new BackstagePassesBehavior();
             case ItemNames.Sulfuras:
                 return new SulfurasBehavior();
-            //case ItemNames.ConjuredManaCake:
-              //  return new ConjuredBehavior();
+            case ItemNames.ConjuredManaCake:
+                return new ConjuredBehavior();
             default:
                 return new StandardBehaviour();
         }
