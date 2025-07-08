@@ -12,7 +12,8 @@ public class GildedRose
         ItemNames.AgedBrie,
         ItemNames.DexterityVest,
         ItemNames.ElixirOfTheMongoose,
-        ItemNames.BackstagePasses
+        ItemNames.BackstagePasses,
+        ItemNames.Sulfuras
     };
 
     public GildedRose(IList<Item> Items)
