@@ -1,4 +1,5 @@
 ﻿using GildedRoseKata.Behaviour;
+using Microsoft.VisualBasic;
 
 namespace GildedRoseKata;
 
@@ -6,6 +7,13 @@ public class GildedRose
 {
     IList<Item> Items;
     ItemBehaviourProvider itemBehaviourProvider;
+    
+    private readonly List<string> _transitionedItemBehaviours = new List<string>
+    {
+        ItemNames.DexterityVest,
+        ItemNames.ElixirOfTheMongoose
+    };
+    
     public GildedRose(IList<Item> Items)
     {
         this.Items = Items;
@@ -16,12 +24,15 @@ public class GildedRose
     {
         for (var i = 0; i < Items.Count; i++)
         {
-            if (Items[i].Name == ItemNames.DexterityVest || Items[i].Name == ItemNames.ElixirOfTheMongoose)
+            var item = Items[i];
+            
+            if (_transitionedItemBehaviours.Contains(item.Name))
             {
-                var behaviour = itemBehaviourProvider.GetBehaviour(Items[i]);
-                //behaviour.UpdateQuality();
+                var behaviour = itemBehaviourProvider.GetBehaviour(item);
+                behaviour.UpdateQuality(item);
                 break;
             }
+            
             if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
             {
                 if (Items[i].Quality > 0)
