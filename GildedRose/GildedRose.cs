@@ -9,7 +9,9 @@ public class GildedRose
 
     private readonly List<string> _transitionedItemBehaviours = new List<string>
     {
-        ItemNames.AgedBrie
+        ItemNames.AgedBrie,
+        ItemNames.DexterityVest,
+        ItemNames.ElixirOfTheMongoose
     };
 
     public GildedRose(IList<Item> Items)
